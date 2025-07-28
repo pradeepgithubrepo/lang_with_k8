@@ -1,19 +1,72 @@
-# Ignore everything
-/*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# But NOT these folders (un-ignore)
+# C extensions
+*.so
 
-!app/
-!app/**
-!docker/
-!docker/**
-!k8/
-!k8/**
-!main.py
-!pyproject.toml
-!requirements.txt
-!README.md
+# Virtual environment
+.venv/
+env/
+venv/
 
-# Optionally, do not ignore .gitignore itself
-!.gitignore
+# Environment variables
+.env
+*.env
 
+# Pytest cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+
+# VSCode settings
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Docker
+*.pid
+*.log
+
+# Redis dump files
+dump.rdb
+
+# FAISS / Chroma / Vector DB artifacts
+*.faiss
+index/
+chroma_db/
+local_db/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Kubernetes
+*.yaml~
+
+# FastAPI auto-generated docs
+openapi.json
+
+# Logs and debug files
+logs/
+data/
+*.log
+*.bak
+
+# Pydantic compiled files
+*.pyd
+
+# Coverage reports
+htmlcov/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
