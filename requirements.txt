@@ -1,0 +1,17 @@
+langchain
+langchain-openai
+langchain_google_genai
+langchain-core
+langchain_community
+dotenv
+langgraph
+docx2txt
+pypdf
+langchain_chroma
+python-multipart
+fastapi
+uvicorn
+streamlit
+faiss-cpu
+tiktoken
+duckduckgo-search
