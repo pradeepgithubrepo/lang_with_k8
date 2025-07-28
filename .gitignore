@@ -1,0 +1,21 @@
+# Ignore everything
+/*
+
+# But NOT these folders (un-ignore)
+
+!app/
+!app/**
+!docker/
+!docker/**
+!k8/
+!k8/**
+!main.py
+!pyproject.toml
+!requirements.txt
+!README.md
+
+# Optionally, do not ignore .gitignore itself
+!.gitignore
+
+# Ignore all .env files everywhere
+*.env.env
