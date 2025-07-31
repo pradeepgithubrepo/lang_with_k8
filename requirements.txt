@@ -8,6 +8,7 @@ langgraph
 docx2txt
 pypdf
 langchain_chroma
+redis
 python-multipart
 fastapi
 uvicorn

@@ -4,7 +4,7 @@ import streamlit as st
 import requests
 
 # Config
-BACKEND_HOST = "http://localhost:8000"
+BACKEND_HOST = "http://rag-backend:8000"
 ASK_API = f"{BACKEND_HOST}/ask"
 METRICS_API = f"{BACKEND_HOST}/metrics"
 

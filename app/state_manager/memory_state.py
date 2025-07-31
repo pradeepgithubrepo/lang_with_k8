@@ -1,9 +1,9 @@
 import redis
 import json
 from typing import Optional, Dict, Any, List
-
+import os 
 class RedisMemory:
-    def __init__(self, host: str = "localhost", port: int = 6379, db: int = 0, ttl_seconds: int = 3600):
+    def __init__(self, host="redis", port: int = 6379, db: int = 0, ttl_seconds: int = 3600):
         self.client = redis.Redis(host=host, port=port, db=db, decode_responses=True)
         self.ttl = ttl_seconds
 
