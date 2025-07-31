@@ -23,7 +23,7 @@ This project provides a **modular boilerplate** to build and deploy **end-to-end
                                       |
                               +-------+--------+
                               | Vector Store    |
-                              | (FAISS/Chroma)  |
+                              | (Chroma)  |
                               +----------------+
 ```
 
@@ -90,9 +90,19 @@ cd enterprise-rag-agent
 ### 2. 🔐 Create `.env`
 
 ```env
-RAG_API_KEY=your_secure_key
-OPENAI_API_KEY=your_openai_key
-EMBEDDING_MODEL=text-embedding-ada-002
+AZURE_ENDPOINT = 
+AZURE_API_KEY = 
+OPENAI_API_TYPE = 
+AZURE_DEPLOYMENT = 
+AZURE_API_VERSION = 
+AZURE_MODEL=
+GEMINI_API_KEY=
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT=
+LANGSMITH_API_KEY=
+LANGSMITH_PROJECT=
+SERPER_API_KEY=
+RAG_API_KEY=
 ```
 
 ### 3. 📦 Install Dependencies
@@ -187,8 +197,14 @@ Body:
 ## 🐳 Docker Support
 
 ```bash
-docker build -t rag-backend -f docker/Dockerfile .
-docker run -p 8000:8000 rag-backend
+docker network create rag-net
+ docker run -d   --name redis   --network rag-network   redis:latest
+docker network connect rag-net redis
+
+ docker run -d   --name rag-backend   --network rag-net   -p 8000:8000   rag-backend:latest
+
+docker run -d   --name rag-frontend   --network rag-net   -p 8501:8501   rag-frontend:latest<img width="902" height="189" alt="image" src="https://github.com/user-attachments/assets/66ef1b9e-081d-4c5c-9b61-93f61d7576c5" />
+
 ```
 
 ---
@@ -196,8 +212,7 @@ docker run -p 8000:8000 rag-backend
 ## ☸️ Kubernetes Deployment
 
 ```bash
-kubectl apply -f k8/deployment.yaml
-kubectl apply -f k8/service.yaml
+kubectl apply -f deployment/
 ```
 
 ---
