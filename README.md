@@ -120,7 +120,7 @@ docker run -d -p 6379:6379 redis
 ### 5. 🧠 Run FastAPI Backend
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### 6. 🖥️ Run Streamlit UI
